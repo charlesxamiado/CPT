@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CPT</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="google_map_api_key">AIzaSyBqgFHkLYlGJDGgfKUz1FBF3Vsv3k2gTWI</string>
+    <string name="collection_users">Users</string>
+    <string name="collection_chatrooms">Chatrooms</string>
+    <string name="collection_chat_messages">Chat Messages</string>
+    <string name="collection_chatroom_user_list">User List</string>
+    <string name="collection_user_locations">User Locations</string>
+</resources>
