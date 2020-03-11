@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements
 
     // widgets
     private EditText mEmail, mPassword;
-    private ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_main);
         mEmail = findViewById(R.id.email);
         mPassword = findViewById(R.id.password);
-//        mProgressBar = findViewById(R.id.progressBar);
 
         setupFirebaseAuth();
         findViewById(R.id.login).setOnClickListener(this);
