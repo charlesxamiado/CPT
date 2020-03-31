@@ -10,6 +10,7 @@ public class User implements Parcelable {
     private String username;
     private String disability;
     private String gender;
+    private String address;
 
     public String getEmail() {
         return email;
@@ -23,6 +24,7 @@ public class User implements Parcelable {
                 ", username='" + username + '\'' +
                 ", disability='" + disability + '\'' +
                 ", gender='" + gender + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 
@@ -62,15 +64,18 @@ public class User implements Parcelable {
         this.gender = gender;
     }
 
-    public User(String email, String user_id, String username, String disability, String gender) {
+    public String getAddress() { return address; }
+
+    public void setAddress(String address) { this.address = address; }
+
+    public User(String email, String user_id, String username, String disability, String gender, String address) {
         this.email = email;
         this.user_id = user_id;
         this.username = username;
         this.disability = disability;
         this.gender = gender;
+        this.address = address;
     }
-
-
 
     public User() {
 
@@ -82,6 +87,7 @@ public class User implements Parcelable {
         username = in.readString();
         disability = in.readString();
         gender = in.readString();
+        address = in.readString();
     }
 
     public static final Creator<User> CREATOR = new Creator<User>() {
@@ -108,5 +114,6 @@ public class User implements Parcelable {
         dest.writeString(username);
         dest.writeString(disability);
         dest.writeString(gender);
+        dest.writeString(address);
     }
 }

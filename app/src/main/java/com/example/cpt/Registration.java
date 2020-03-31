@@ -40,7 +40,7 @@ public class Registration extends AppCompatActivity implements
     private static final String TAG = "RegisterActivity";
 
     //widgets
-    private EditText mEmail, mPassword, mConfirmPassword, mDisability;
+    private EditText mEmail, mPassword, mConfirmPassword, mDisability, mAddress;
     private ProgressBar mProgressBar;
     private RadioGroup mGender;
     private RadioButton mSelectedGender;
@@ -59,6 +59,7 @@ public class Registration extends AppCompatActivity implements
         mProgressBar = findViewById(R.id.progressBar);
         mGender = (RadioGroup)  findViewById(R.id.radioGender);
         mDisability = findViewById(R.id.disability);
+        mAddress = findViewById(R.id.address);
         mGender.clearCheck();
 
 
@@ -74,7 +75,7 @@ public class Registration extends AppCompatActivity implements
      * @param email
      * @param password
      */
-    public void registerNewEmail(final String email, String password, final String gender, final String disability){
+    public void registerNewEmail(final String email, String password, final String gender, final String disability, final String address){
 
         showDialog();
 
@@ -95,6 +96,8 @@ public class Registration extends AppCompatActivity implements
                             user.setUser_id(FirebaseAuth.getInstance().getUid());
                             user.setGender(gender);
                             user.setDisability(disability);
+                            user.setAddress(address);
+
 
                             FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
                                     .setTimestampsInSnapshotsEnabled(true)
@@ -179,7 +182,7 @@ public class Registration extends AppCompatActivity implements
                     if(doStringsMatch(mPassword.getText().toString(), mConfirmPassword.getText().toString())){
 
                         //Initiate registration task
-                        registerNewEmail(mEmail.getText().toString(), mPassword.getText().toString(), mSelectedGender.getText().toString(), mDisability.getText().toString());
+                        registerNewEmail(mEmail.getText().toString(), mPassword.getText().toString(), mSelectedGender.getText().toString(), mDisability.getText().toString(), mAddress.getText().toString());
                     }else{
                         Toast.makeText(Registration.this, "Passwords do not Match", Toast.LENGTH_SHORT).show();
                     }
