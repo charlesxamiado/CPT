@@ -45,5 +45,17 @@
         android:textColor="#ffffff"
         android:text="HELP" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#363636"
+        android:gravity="center"
+        android:textSize="48dp"
+        android:textColor="#ffffff"
+        android:text="SIGN OUT"
+        android:id="@+id/signoutbtn"/>
 
 </LinearLayout>
